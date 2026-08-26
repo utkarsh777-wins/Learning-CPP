@@ -24,6 +24,21 @@ IF NUM == REV(NUM)
 ARMSTRONG
 IF NUM == Sum of(cube of all its digits)
 
+DIVISORS
+VECTOR LS
+N%I == 0
+PUSH BACK 
+IF (N/I) NOT EQUAL TO I: LS.PUSHBACK
+SORT
+ITERATE AND PRINT
+
+PRIME 
+NUMBER HAVINNG ORE THAN 2 DIVISORS: NOT PRIME, RETURN 
+ELSE PRIME 
+
+GCD
+HIGHEST COMMON FACTORS OF TO NUMBERS 
+
 */
 
 // int count(int n) {
@@ -73,9 +88,9 @@ bool ARMSTRONG(int n) {
         temp = temp/10;
     }
 
-//     return n == sum;
+    return n == sum;
 
-// }
+}
 
 // // void printArr(int arr[]) {
 
@@ -145,6 +160,73 @@ void printDivisors(int n) {
 
 }
 
+void findPrime(int n) {
+
+    int count = 0;
+
+    for(int i=1; i*i<=n; i++) {
+        if(n%i == 0) {
+            count++;
+
+            if((n/i) != i) {
+                count++;
+            }
+        }
+
+        if(count>2) {
+            std::cout << "Not a prime number" << std::endl;
+            return;
+        }
+    }
+
+    std::cout << "Prime number" << std::endl;
+}
+
+int min(int m, int n) {
+    return (m>n)? n : m;
+}
+
+// O(min(m,n)  --complexity)
+
+int gcd(int m, int n) 
+{
+    int gcd = 1;
+    for(int i=1; i<min(m, n); i++) {
+        if(m%i == 0 && n%i ==0) {
+            gcd = i;
+        }
+    }
+
+    return gcd;
+}
+
+// O(min(m,n)) same compexity either way
+int GCD(int n, int m) {
+    int gcd = 1;
+    for(int i=min(m, n); i>=1; i++) {
+        if(m%i == 0 && n%i == 0) {
+            gcd = i;
+            break;
+        }
+    }
+
+    return gcd;
+}
+
+int euclideanGCD(int a, int b) 
+{
+    while(a>0 && b>0) {
+        // if a is greater then we'll take the reminnder of a%b and vice versa
+        // and whichever one of them becomes zero first => the other one is the gcd
+        // the loop will keep on running till one of them is 0
+        if(a>b) {a = a % b;}
+        else {b = b % a;}
+
+    }
+
+    if(a==0) {return b;}
+    return a;
+}
 
 int main() {
 
@@ -162,9 +244,13 @@ int main() {
     // else {std::cout << "NoArmstrongerrr" << std::endl;}
 
     // divisors(n);
-    printDivisors(n);
+    // printDivisors(n);
 
+    // findPrime(n);
 
+    // std::cout << gcd(n, 66) << std::endl;
+    std::cout << euclideanGCD(n, 66) << std::endl;
+    // std::cout << GCD(n, 66) << std::endl;
 
     return 0;
 
