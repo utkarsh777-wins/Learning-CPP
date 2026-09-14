@@ -26,8 +26,8 @@ void student::fetchInfo(){
 
     // for name make sure you use get
     cout << "Enter student name: ";
-    // cin >> name;
-    getline(cin, name);
+    cin >> name;
+    // getline(cin, name);
     // newline character issue in case of getline 
     cin.ignore();
     cout << endl << "Enter registration number of the student: ";

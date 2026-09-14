@@ -47,8 +47,6 @@ int main() {
     kthSmallest(arr, size, k);
     printArray(arr, size);
 
-    
-
 
     return 0;
 

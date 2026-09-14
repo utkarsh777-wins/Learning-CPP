@@ -10,8 +10,8 @@ using namespace std;
 
 // private:
 //     int a; float b; // 8
-//     char c; // paddingn in the memory location // 12 bytes 
-//     // 3 byttes are available unallocated
+//     char c; // padding in the memory location // 12 bytes 
+//     // 3 bytes are available unallocated
 //     char d, e, f; // still 12
 //     char g;  // 16
 
@@ -20,14 +20,15 @@ using namespace std;
 class student {
 private:
     int regNum; char name; double fees;    //data member
-public:
     void getData()  //member function
     {
         cout << "Enter reg No, Name and fees ";
         cin >> regNum >> name >> fees;
     }
+public:
     void showData()
     {
+        getData();  // calling is within the class that is why we can call the private outside the private 
         cout << endl << "Registration Number : " << regNum << endl;
         cout << "Name: " << name << endl;
         cout << "Fees: " << fees << endl;
