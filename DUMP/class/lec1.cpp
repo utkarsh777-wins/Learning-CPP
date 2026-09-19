@@ -42,7 +42,7 @@ int main() {
 
     // acessing the members of the class 
     // obj.member
-    obj.getData();
+    //obj.getData();
     obj.showData();
 
     return 0;

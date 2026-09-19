@@ -26,7 +26,7 @@ int main()  {
     << setw(12) << marks << endl;
     cout << endl;
     cout << "Right Alignment: "  << endl;
-    cout << right << setw(20) << "C++" << endl;
+    cout << right << setw(22) << "C++" << endl;
     cout << setfill('*') << setw(20) << 25;
     cout << setfill('*') << left << setw(20) << 25 << endl;
     cout << setfill(' ');

@@ -24,7 +24,7 @@ public:
 
 };
 
-// defining the functionn outside the class 
+// defining the function outside the class 
 
 void shape::areaCircle() 
 {
