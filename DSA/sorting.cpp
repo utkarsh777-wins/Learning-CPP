@@ -1,4 +1,7 @@
 #include <iostream>
+#include <utility>
+#include <algorithm>
+
 
 void bubbleSort(int arr[], int n) {
 
@@ -51,6 +54,19 @@ void selectionSort(int arr[], int n)        // best / worst / avg - O(n^2)
     }
 }
 
+void doubleSelectionSort(int arr[], int n) 
+{
+    for(int i=0, j=n-1; i<j; i++, j--) {
+        int min = i, max = j;
+        for(int k=i; k<=j; k++) {
+            if (arr[k] < arr[min]) min = k;
+            if (arr[k] > arr[max]) max = k;
+        }
+        std::swap(arr[i], arr[min]);
+        if (max == i) max = min;
+        std::swap(arr[j], arr[max]);
+    }
+}
 void takeInput(int arr[], int n) 
 {
     for(int i=0; i<n; i++) 
