@@ -12,8 +12,8 @@ Node *createNode(int value)
 {
     Node *newNode = new Node();
     newNode->data = value;
-    newNode->left= NULL;
-    newNode->right=NULL;
+    newNode->left = NULL;
+    newNode->right = NULL;
     return newNode;
 }
 
@@ -58,3 +58,4 @@ int main(){
     inorder(root);
     return 0;
 }
+
